@@ -25,7 +25,7 @@ public class GenTagCx {
         return new OneTagCx(value);
     }
 
-    public List<OneTagCx> genTagList(String input) {
+    public static List<OneTagCx> genTagList(String input) {
         List<String> lines = input.lines()
                 .filter(line -> !line.trim().isEmpty()) // Игнорируем пустые строки
                 .collect(Collectors.toList());

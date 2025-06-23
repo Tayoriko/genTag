@@ -8,13 +8,14 @@ import org.junit.jupiter.api.Test;
 class OneTagCXTest {
 
     static OneTagCx oneTagCX;
+    String[] tag = new String[4];
 
     @BeforeEach
     void setUp() {
-        String[] tag = new String[4];
         tag[0] = "LS_E_27_HL";
         tag[1] = "BOOL";
         tag[2] = "W100.13";
+        tag[3] = "Датчик нижнего уровня";
         oneTagCX = new OneTagCx(tag);
     }
 
@@ -26,7 +27,8 @@ class OneTagCXTest {
 
     @Test
     void testToString() {
-        String expectedResult = "LS_E_27_HL - BOOL - W100.13";
+        String expectedResult = "LS_E_27_HL - BOOL - W100.13 - Датчик нижнего уровня";
+        oneTagCX = new OneTagCx(tag);
         Assertions.assertEquals(expectedResult,oneTagCX.toString());
     }
 }
